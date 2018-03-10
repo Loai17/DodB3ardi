@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dod B3rdi</title>
+</head>
+<body style="align-content: center;">
+<h1>Dod B3rdi</h1>
+{% if allMessages != None %}
+	{% for message in allMessages %}
+		<div>
+		<h3>{{ message.name }}: {{ message.message }}</h3>
+		</div>
+	{% endfor %}
+{% endif %}
+
+<form action="{{url_for('home')}}" method="POST">
+	Name : <input type="text" name="name">
+	Message : <input type="text" name="message">
+	<input type="submit" name="Submit">
+</form>
+
+</body>
+</html>
